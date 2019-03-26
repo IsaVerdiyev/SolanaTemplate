@@ -1,0 +1,73 @@
+@import 'variables';
+
+body{
+    background-color:green;
+    font-size: $basicFontSize;
+}
+
+@mixin content-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.container {
+    background-color: red;
+    @include content-center();
+}
+
+header {
+    width: 960px;
+    @include content-center();
+    justify-content: stretch;
+    justify-items: stretch;
+}
+
+nav {
+    @include content-center();
+    
+    background: $color1;
+
+    align-items: stretch;
+
+    form{
+        background-color:$color2;
+        @include content-center();
+        align-items: stretch;
+        font-size: $basicFontSize2;
+
+        * {
+            background-color: transparent;
+            padding: 0px;
+            margin: 0px;
+            border: 0ch;
+            font-size:$basicFontSize2;
+        }
+
+        button {
+            transform: rotate(-45deg);
+        }
+    }
+}
+
+.nav {
+    font-size: $basicFontSize2;
+    @include content-center();
+    align-items: stretch;
+    div {
+        @include content-center();
+        background-color: transparent;
+        box-sizing: border-box;
+        padding: 5px 10px;
+    }
+}
+
+.pInNav{
+    background-color:transparent;
+    display:flex;
+    flex-direction: row;
+    width: 40%;
+    font-size: $basicFontSize;
+}
