@@ -1,6 +1,8 @@
 body {
   background-color: green;
   font-size: 30px;
+  margin: 0px;
+  padding: 0px;
 }
 
 .container {
@@ -14,6 +16,10 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 header {
@@ -47,6 +53,7 @@ nav {
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
+  width: 100%;
 }
 
 nav form {
@@ -122,5 +129,60 @@ nav form button {
           flex-direction: row;
   width: 40%;
   font-size: 30px;
+}
+
+.secondHeaderPart {
+  height: 400px;
+  background-color: bisque;
+  width: 100%;
+}
+
+.headerClass {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: aquamarine;
+  padding: 30px 0px;
+}
+
+.thirdHeaderPart {
+  height: 300px;
+  background-color: black;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+}
+
+.thirdHeaderPart div {
+  background-color: azure;
+  height: 100%;
+  width: 25%;
+  border: 1px solid black;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.mainOne {
+  height: 50px;
+  background-color: seagreen;
+  width: 100%;
 }
 /*# sourceMappingURL=style.css.map */
