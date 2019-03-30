@@ -23,7 +23,7 @@ body{
 }
 
 header {
-    width: 960px;
+    width: 100%;
     @include content-center();
     justify-content: stretch;
     justify-items: stretch;
@@ -35,7 +35,7 @@ nav {
     background: $color1;
 
     align-items: stretch;
-    width:100%;
+    width:$contentWidth;
 
     form{
         background-color:$color2;
@@ -72,7 +72,6 @@ nav {
 .pInNav{
     background-color:transparent;
     display:flex;
-    flex-direction: row;
     width: 40%;
     font-size: $basicFontSize;
 }
@@ -107,8 +106,13 @@ nav {
     }
 }
 
+.main {
+    @include content-center();
+    flex-direction: column;
+}
+
 .mainOne {
-    height: 50px;
+    height: 100px;
     background-color: seagreen;
     width: 100%;
     
