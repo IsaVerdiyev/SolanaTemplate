@@ -3,10 +3,18 @@ body {
   font-size: 30px;
   margin: 0px;
   padding: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .container {
-  background-color: red;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -20,44 +28,29 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  background-color: bisque;
 }
 
-header {
-  width: 100%;
+.container header {
+  padding: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: stretch;
-      -ms-flex-pack: stretch;
-          justify-content: stretch;
-  justify-items: stretch;
-}
-
-nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background: #333333;
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
-  width: 800px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 960px;
 }
 
-nav form {
-  background-color: gray;
+.container header .firstHeaderPart {
+  background-color: #414146;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -67,134 +60,114 @@ nav form {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.container header .firstHeaderPart nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
-  font-size: 25px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
-nav form * {
+.container header .firstHeaderPart nav div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.container header .firstHeaderPart nav div a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container header .firstHeaderPart nav form {
+  width: 200px;
+  background-color: #565a60;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.container header .firstHeaderPart nav form * {
+  -ms-flex-negative: 0.1;
+      flex-shrink: 0.1;
   background-color: transparent;
-  padding: 0px;
   margin: 0px;
-  border: 0ch;
+  padding: 0px;
+  border: 0px;
   font-size: 25px;
 }
 
-nav form button {
+.container header .firstHeaderPart nav form input {
+  width: 70%;
+}
+
+.container header .firstHeaderPart nav form button {
+  width: 30%;
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
 }
 
-.nav {
-  font-size: 25px;
+.container header .firstHeaderPart nav .headerLabel {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
 }
 
-.nav div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-color: transparent;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 5px 10px;
-}
-
-.pInNav {
-  background-color: transparent;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 40%;
-  font-size: 30px;
-}
-
-.secondHeaderPart {
-  height: 400px;
-  background-color: bisque;
-  width: 100%;
-}
-
-.headerClass {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  background-color: aquamarine;
-  padding: 30px 0px;
-}
-
-.thirdHeaderPart {
-  height: 300px;
-  background-color: black;
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: stretch;
-      -ms-flex-pack: stretch;
-          justify-content: stretch;
-}
-
-.thirdHeaderPart div {
-  background-color: azure;
-  height: 100%;
-  width: 25%;
-  border: 1px solid black;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-.main {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.mainOne {
-  height: 100px;
-  background-color: seagreen;
-  width: 100%;
+@media all and (max-width: 960px) {
+  header {
+    padding: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background-color: red;
+    width: 700px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
