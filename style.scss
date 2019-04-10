@@ -10,68 +10,77 @@ body {
 }
 
 .container {
-  @include content-center();
+  @include locate-in-flexbox(center, center);
   flex-direction: column;
+}
 
-  background-color: bisque;
-
-  
-
-  header {
-    @include headerStyles();
-    width: $contentWidth;
-    .firstHeaderPart {
-      background-color: $darkenGreyColor;
-      @include locate-in-flexbox(center, center);
-      nav {
-        @include locate-in-flexbox(center, stretch);
-        flex-grow: 1;
-
-        div {
-          @include locate-in-flexbox(center, stretch);
-
-          a {
-            @include content-center();
-          }
-        }
-
-        form {
-          width: 200px;
-          background-color: $normalGreyColor;
-          @include locate-in-flexbox(center, stretch);
-          * {
-            flex-shrink: 0.1;
-            background-color: transparent;
-            margin: 0px;
-            padding: 0px;
-            border: 0px;
-            font-size: $searchFormFontSize;
-          }
-          input {
-            width: 70%;
-          }
-          button {
-            width: 30%;
-            transform: rotate(-45deg);
-          }
-        }
-
-        .headerLabel {
-          flex-grow:1;
-          @include locate-in-flexbox(flex-start, stretch);
-        }
-      }
+header {
+  @include headerStyles();
+  width: $lg-contentWidth;
+  .firstHeaderPart {
+    * {
+      margin: 0px;
+    }
+    background-color: $darkenGreyColor;
+    @include locate-in-flexbox(center, center);
+    nav {
+      @include locate-in-flexbox(center, stretch);
+      flex-grow: 1;
     }
   }
 }
 
+.headerLabel {
+  flex-grow: 1;
+  height: $heightInHeaderNavigation;
+  @include locate-in-flexbox(flex-start, stretch);
+  p {
+    @include content-center();
+  }
+}
 
-@media all and (max-width:960px) {
-    
+.headerSearchForm {
+  @include headerSearchFormMixin($no-sm-searchFormWidth);
+  height: $heightInHeaderNavigation;
+}
 
-    header {
-      @include headerStyles();
-      background-color: red;
-      width: $md-contentWidth;
+.headerNavigationLinksContainer {
+  @include content-center();
+  div {
+    margin: 0px 5px;
+    a {
+      @include content-center();
+      font-size: $searchFormFontSize;
     }
+  }
+}
+
+@media all and (max-width: 960px) {
+  header {
+    @include headerStyles();
+    width: $md-contentWidth;
+  }
+}
+
+@media all and (max-width: 723px) {
+  header {
+    @include headerStyles();
+    width: $sm-contentWidth;
+  }
+
+  .firstHeaderPart {
+    nav {
+      flex-direction: column;
+    }
+  }
+
+  .headerSearchForm {
+    @include headerSearchFormMixin($sm-searchFormWidth);
+  }
+
+  .headerNavigationLinksContainer {
+    width: 100%;
+    height: 30px;
+    background-color: white;
+  }
 }

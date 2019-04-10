@@ -5,16 +5,37 @@
 }
 
 @mixin locate-in-flexbox($content, $items) {
-    display:flex;
-    justify-content: $content;
-    align-items: $items;
+  display: flex;
+  justify-content: $content;
+  align-items: $items;
 }
 
-
 @mixin headerStyles {
-    
- 
-    padding: 20px;
-    @include locate-in-flexbox(center, stretch);
-    flex-direction: column;
+  box-sizing: border-box;
+  @include locate-in-flexbox(center, stretch);
+  flex-direction: column;
+}
+
+@mixin headerSearchFormMixin($width) {
+  @include locate-in-flexbox(center, stretch);
+  width: $width;
+  background-color: $normalGreyColor;
+  * {
+    flex-shrink: 0.1;
+    background-color: transparent;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    font-size: $searchFormFontSize;
   }
+  input {
+    flex-shrink: 1;
+    width:100%;
+  }
+  button {
+    transform: rotate(-45deg);
+    text-align: right;
+    vertical-align: middle;
+    @include content-center();
+  }
+}
