@@ -30,6 +30,8 @@ header {
   }
 }
 
+
+//first header part
 .headerLabel {
   flex-grow: 1;
   height: $heightInHeaderNavigation;
@@ -55,6 +57,18 @@ header {
   }
 }
 
+
+
+//second header part
+
+.secondHeaderPart {
+  height: $md-lg-secondHeaderPartHeight;
+  background-color: chartreuse;
+}
+
+
+
+//medias-------------------
 @media all and (max-width: 960px) {
   header {
     @include headerStyles();
@@ -71,6 +85,7 @@ header {
   .firstHeaderPart {
     nav {
       flex-direction: column;
+      width: 100%;
     }
   }
 
@@ -81,6 +96,42 @@ header {
   .headerNavigationLinksContainer {
     width: 100%;
     height: 30px;
+    flex-shrink: 1;
     background-color: white;
   }
+
+  .secondHeaderPart {
+    height: $sm-secondHeaderPartHeight;
+  }
+}
+
+
+@media all and (max-width: 435px) {
+  
+  header {
+    @include headerStyles();
+    width: $xs-contentWidth;
+  }
+
+  .firstHeaderPart nav {
+    flex-direction: column;
+    flex-shrink: 1;
+  }
+
+  .headerNavigationLinksContainer {
+    width: 100%;
+    height: 30px;
+    flex-shrink: 1;
+    background-color: white;
+    a {
+      visibility: hidden;
+    }
+  }
+
+  .secondHeaderPart {
+    height: $xs-secondHeaderPartHeight;
+  }
+
+  
+  
 }
