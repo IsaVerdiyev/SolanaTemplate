@@ -12,6 +12,11 @@ body {
 .container {
   @include locate-in-flexbox(center, center);
   flex-direction: column;
+  width: 100%;
+  background-image: url(http://abcgomel.ru/solana/images/sliders/slider-1/slider-bg-1.jpg);
+  background-repeat: no-repeat;
+  background-position-x:center;
+  //background-size: 100%;
 }
 
 header {
@@ -20,6 +25,7 @@ header {
   .firstHeaderPart {
     * {
       margin: 0px;
+      color: white;
     }
     background-color: $darkenGreyColor;
     @include locate-in-flexbox(center, center);
@@ -29,7 +35,6 @@ header {
     }
   }
 }
-
 
 //first header part
 .headerLabel {
@@ -47,29 +52,121 @@ header {
 }
 
 .headerNavigationLinksContainer {
-  @include content-center();
+  @include locate-in-flexbox(center, stretch);
   div {
     margin: 0px 5px;
+    @include content-center();
     a {
-      @include content-center();
       font-size: $searchFormFontSize;
+
+      text-decoration: none;
+    }
+  }
+
+  div {
+    &:hover {
+      background-color: hsl(60, 100%, 50%);
+      //@include content-center();
+      a {
+        color: black;
+      }
     }
   }
 }
-
-
 
 //second header part
 
 .secondHeaderPart {
   height: $md-lg-secondHeaderPartHeight;
-  background-color: chartreuse;
 }
 
+//third header part
 
+.thirdHeaderPart {
+  @include content-center();
+}
+
+.thirdHeaderPartCell {
+  width: 25%;
+  height: $lg-xs-md-thirdHeaderCellHeight;
+  background-color: hsl(60, 100%, 50%);
+  box-sizing: border-box;
+  font-size: 24px;
+  @include locate-in-flexbox(center, stretch);
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.infoDiv {
+  margin: 0px;
+  margin: 20px 20px 30px 20px;
+  border-bottom: 5px solid rgb(239, 239, 239);
+  flex-grow: 1;
+}
+
+.firstHeaderCellButtonsDiv {
+  @include locate-in-flexbox(flex-end, stretch);
+  height: 100%;
+  font-size: $headerCellItemButtonsFontsize;
+  * {
+    @include content-center();
+  }
+}
+
+.firstThirdHeaderPartCell {
+  flex-grow: 1;
+  background-color: white;
+  //margin: 20px 0px 0px 0px;
+}
+
+.thirdThirdHeaderPartCell {
+  background-color: hsl(60, 100%, 40%);
+}
+
+.fourthThirdHeaderPartCell {
+  background-color: hsl(60, 100%, 30%);
+}
+
+.notFirstThirdHeaderPartCells {
+  @include locate-in-flexbox(center, stretch);
+  flex-direction: column;
+  &:hover {
+    background-color: white;
+  }
+
+  div {
+    @include content-center();
+  }
+}
+
+.firstDivInThirdHeaderPartDiv {
+  height: 60%;
+}
+
+.secondDivInThirdHeaderPartDiv {
+  height: 20%;
+}
+
+.thirdDivInThirdHeaderPartDiv {
+  height: 20%;
+  font-size: $thirdDivFontSizeInThirdheaderPartDiv;
+}
+
+.readMoreButton {
+  background-color: darkgray;
+  padding: 10px 20px;
+  &:hover {
+    background-color: yellow;
+  }
+}
+
+.arrowButton {
+  background-color: yellow;
+  padding: 10px 10px;
+}
 
 //medias-------------------
-@media all and (max-width: 960px) {
+@media all and (max-width: 1059px) {
   header {
     @include headerStyles();
     width: $md-contentWidth;
@@ -103,11 +200,17 @@ header {
   .secondHeaderPart {
     height: $sm-secondHeaderPartHeight;
   }
+
+  .thirdHeaderPart {
+    flex-direction: column;
+  }
+  .thirdHeaderPartCell {
+    height: $sm-thirdHeaderCellHeight;
+    width: 100%;
+  }
 }
 
-
 @media all and (max-width: 435px) {
-  
   header {
     @include headerStyles();
     width: $xs-contentWidth;
@@ -132,6 +235,7 @@ header {
     height: $xs-secondHeaderPartHeight;
   }
 
-  
-  
+  .thirdHeaderPartCell {
+    height: $sm-thirdHeaderCellHeight;
+  }
 }

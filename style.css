@@ -28,6 +28,10 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  width: 100%;
+  background-image: url(http://abcgomel.ru/solana/images/sliders/slider-1/slider-bg-1.jpg);
+  background-repeat: no-repeat;
+  background-position-x: center;
 }
 
 header {
@@ -46,7 +50,7 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 960px;
+  width: 1100px;
 }
 
 header .firstHeaderPart {
@@ -64,6 +68,7 @@ header .firstHeaderPart {
 
 header .firstHeaderPart * {
   margin: 0px;
+  color: white;
 }
 
 header .firstHeaderPart nav {
@@ -163,16 +168,13 @@ header .firstHeaderPart nav {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
 }
 
 .headerNavigationLinksContainer div {
   margin: 0px 5px;
-}
-
-.headerNavigationLinksContainer div a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -182,15 +184,170 @@ header .firstHeaderPart nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.headerNavigationLinksContainer div a {
   font-size: 25px;
+  text-decoration: none;
+}
+
+.headerNavigationLinksContainer div:hover {
+  background-color: yellow;
+}
+
+.headerNavigationLinksContainer div:hover a {
+  color: black;
 }
 
 .secondHeaderPart {
   height: 500px;
-  background-color: chartreuse;
 }
 
-@media all and (max-width: 960px) {
+.thirdHeaderPart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.thirdHeaderPartCell {
+  width: 25%;
+  height: 252px;
+  background-color: yellow;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.infoDiv {
+  margin: 0px;
+  margin: 20px 20px 30px 20px;
+  border-bottom: 5px solid #efefef;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.firstHeaderCellButtonsDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  height: 100%;
+  font-size: 14px;
+}
+
+.firstHeaderCellButtonsDiv * {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.firstThirdHeaderPartCell {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  background-color: white;
+}
+
+.thirdThirdHeaderPartCell {
+  background-color: #cccc00;
+}
+
+.fourthThirdHeaderPartCell {
+  background-color: #999900;
+}
+
+.notFirstThirdHeaderPartCells {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.notFirstThirdHeaderPartCells:hover {
+  background-color: white;
+}
+
+.notFirstThirdHeaderPartCells div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.firstDivInThirdHeaderPartDiv {
+  height: 60%;
+}
+
+.secondDivInThirdHeaderPartDiv {
+  height: 20%;
+}
+
+.thirdDivInThirdHeaderPartDiv {
+  height: 20%;
+  font-size: 12px;
+}
+
+.readMoreButton {
+  background-color: darkgray;
+  padding: 10px 20px;
+}
+
+.readMoreButton:hover {
+  background-color: yellow;
+}
+
+.arrowButton {
+  background-color: yellow;
+  padding: 10px 10px;
+}
+
+@media all and (max-width: 1059px) {
   header {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
@@ -207,7 +364,7 @@ header .firstHeaderPart nav {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    width: 700px;
+    width: 900px;
   }
 }
 
@@ -289,6 +446,16 @@ header .firstHeaderPart nav {
   .secondHeaderPart {
     height: 300px;
   }
+  .thirdHeaderPart {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .thirdHeaderPartCell {
+    height: 234px;
+    width: 100%;
+  }
 }
 
 @media all and (max-width: 435px) {
@@ -330,6 +497,9 @@ header .firstHeaderPart nav {
   }
   .secondHeaderPart {
     height: 150px;
+  }
+  .thirdHeaderPartCell {
+    height: 234px;
   }
 }
 /*# sourceMappingURL=style.css.map */
