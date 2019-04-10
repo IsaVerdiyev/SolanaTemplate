@@ -13,15 +13,23 @@ body {
   @include locate-in-flexbox(center, center);
   flex-direction: column;
   width: 100%;
+  
+}
+
+.headerContainer {
+  width: 100%;
+  @include content-center();
   background-image: url(http://abcgomel.ru/solana/images/sliders/slider-1/slider-bg-1.jpg);
   background-repeat: no-repeat;
   background-position-x:center;
+
+  background-color: rgb(239, 239, 239);
   //background-size: 100%;
 }
-
 header {
   @include headerStyles();
   width: $lg-contentWidth;
+  margin:40px 0px;
   .firstHeaderPart {
     * {
       margin: 0px;
@@ -173,7 +181,7 @@ header {
   }
 }
 
-@media all and (max-width: 723px) {
+@media all and (max-width: 800px) {
   header {
     @include headerStyles();
     width: $sm-contentWidth;

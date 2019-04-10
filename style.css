@@ -29,9 +29,23 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 100%;
+}
+
+.headerContainer {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-image: url(http://abcgomel.ru/solana/images/sliders/slider-1/slider-bg-1.jpg);
   background-repeat: no-repeat;
   background-position-x: center;
+  background-color: #efefef;
 }
 
 header {
@@ -51,6 +65,7 @@ header {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 1100px;
+  margin: 40px 0px;
 }
 
 header .firstHeaderPart {
@@ -368,7 +383,7 @@ header .firstHeaderPart nav {
   }
 }
 
-@media all and (max-width: 723px) {
+@media all and (max-width: 800px) {
   header {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
