@@ -73,7 +73,7 @@ header {
 
   div {
     &:hover {
-      background-color: hsl(60, 100%, 50%);
+      background-color: $lightYellowColor;
       //@include content-center();
       a {
         color: black;
@@ -97,7 +97,7 @@ header {
 .thirdHeaderPartCell {
   width: 25%;
   height: $lg-xs-md-thirdHeaderCellHeight;
-  background-color: hsl(60, 100%, 50%);
+  background-color: $lightYellowColor;
   box-sizing: border-box;
   font-size: 24px;
   @include locate-in-flexbox(center, stretch);
@@ -128,11 +128,11 @@ header {
 }
 
 .thirdThirdHeaderPartCell {
-  background-color: hsl(60, 100%, 40%);
+  background-color: $normalYellowColor;
 }
 
 .fourthThirdHeaderPartCell {
-  background-color: hsl(60, 100%, 30%);
+  background-color: $darkYellowColor;
 }
 
 .notFirstThirdHeaderPartCells {
@@ -164,19 +164,83 @@ header {
   background-color: darkgray;
   padding: 10px 20px;
   &:hover {
-    background-color: yellow;
+    background-color: $lightYellowColor;
   }
 }
 
 .arrowButton {
-  background-color: yellow;
+  background-color: $lightYellowColor;
   padding: 10px 10px;
+}
+
+
+//main-------------------------------
+
+main {
+  width:100%;
+  @include locate-in-flexbox(center, stretch);
+  //
+  
+}
+
+.mainOne {
+  width: 100%;
+  background-color: $darkenGreyColor;
+  @include content-center();
+  > div {
+    width: $lg-contentWidth;
+    background-color: transparent;
+    @include locate-in-flexbox(center, stretch);
+    div {
+      font-size: $mainPartDivTextFontsize;
+      @include content-center();
+      * {
+        margin:0px;
+        padding: 0px;
+      }
+    }
+    div:first-of-type {
+      width: 91px;
+      height: 91px;
+      background-color: $lightYellowColor;
+    }
+    div:nth-of-type(3) {
+      width:180px;
+      height: 91px;
+      background-color: $lightYellowColor;
+    }
+    div:nth-of-type(2) {
+      @include locate-in-flexbox(center, stretch);
+      flex-direction: column;
+      flex-grow: 2;
+      *{
+        text-align: left;
+        @include locate-in-flexbox(flex-start, stretch);
+      }
+      h2 {
+        font-weight: normal;
+        display: inline;
+        span {
+          display: inline;
+          font-weight: bold;
+        }
+      }
+      p{
+        font-size: $mainPartSmallerTextFontsize;
+      }
+
+    }
+  }
 }
 
 //medias-------------------
 @media all and (max-width: 1059px) {
   header {
     @include headerStyles();
+    width: $md-contentWidth;
+  }
+
+  .mainOne > div {
     width: $md-contentWidth;
   }
 }
@@ -216,7 +280,15 @@ header {
     height: $sm-thirdHeaderCellHeight;
     width: 100%;
   }
+  .mainOne > div {
+    width: $sm-contentWidth;
+    flex-direction: column;
+    div:nth-of-type(3) {
+     align-self: flex-end;
+    }
+  }
 }
+
 
 @media all and (max-width: 435px) {
   header {
@@ -245,5 +317,9 @@ header {
 
   .thirdHeaderPartCell {
     height: $sm-thirdHeaderCellHeight;
+  }
+
+  .mainOne > div {
+    width: $xs-contentWidth;
   }
 }

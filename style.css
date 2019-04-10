@@ -362,6 +362,123 @@ header .firstHeaderPart nav {
   padding: 10px 10px;
 }
 
+main {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.mainOne {
+  width: 100%;
+  background-color: #414146;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mainOne > div {
+  width: 1100px;
+  background-color: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.mainOne > div div {
+  font-size: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mainOne > div div * {
+  margin: 0px;
+  padding: 0px;
+}
+
+.mainOne > div div:first-of-type {
+  width: 91px;
+  height: 91px;
+  background-color: yellow;
+}
+
+.mainOne > div div:nth-of-type(3) {
+  width: 180px;
+  height: 91px;
+  background-color: yellow;
+}
+
+.mainOne > div div:nth-of-type(2) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+}
+
+.mainOne > div div:nth-of-type(2) * {
+  text-align: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.mainOne > div div:nth-of-type(2) h2 {
+  font-weight: normal;
+  display: inline;
+}
+
+.mainOne > div div:nth-of-type(2) h2 span {
+  display: inline;
+  font-weight: bold;
+}
+
+.mainOne > div div:nth-of-type(2) p {
+  font-size: 12px;
+}
+
 @media all and (max-width: 1059px) {
   header {
     -webkit-box-sizing: border-box;
@@ -379,6 +496,9 @@ header .firstHeaderPart nav {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    width: 900px;
+  }
+  .mainOne > div {
     width: 900px;
   }
 }
@@ -471,6 +591,17 @@ header .firstHeaderPart nav {
     height: 234px;
     width: 100%;
   }
+  .mainOne > div {
+    width: 420px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .mainOne > div div:nth-of-type(3) {
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+  }
 }
 
 @media all and (max-width: 435px) {
@@ -515,6 +646,9 @@ header .firstHeaderPart nav {
   }
   .thirdHeaderPartCell {
     height: 234px;
+  }
+  .mainOne > div {
+    width: 300px;
   }
 }
 /*# sourceMappingURL=style.css.map */
