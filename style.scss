@@ -13,7 +13,6 @@ body {
   @include locate-in-flexbox(center, center);
   flex-direction: column;
   width: 100%;
-  
 }
 
 .headerContainer {
@@ -21,7 +20,7 @@ body {
   @include content-center();
   background-image: url(http://abcgomel.ru/solana/images/sliders/slider-1/slider-bg-1.jpg);
   background-repeat: no-repeat;
-  background-position-x:center;
+  background-position-x: center;
 
   background-color: rgb(239, 239, 239);
   //background-size: 100%;
@@ -29,7 +28,7 @@ body {
 header {
   @include headerStyles();
   width: $lg-contentWidth;
-  margin:40px 0px;
+  margin: 40px 0px;
   .firstHeaderPart {
     * {
       margin: 0px;
@@ -99,7 +98,7 @@ header {
   height: $lg-xs-md-thirdHeaderCellHeight;
   background-color: $lightYellowColor;
   box-sizing: border-box;
-  font-size: 24px;
+  font-size: $infoCellFontSize;
   @include locate-in-flexbox(center, stretch);
   flex-direction: column;
   margin-bottom: 10px;
@@ -108,7 +107,7 @@ header {
 .infoDiv {
   margin: 0px;
   margin: 20px 20px 30px 20px;
-  border-bottom: 5px solid rgb(239, 239, 239);
+  border-bottom: $borderOfInfo;
   flex-grow: 1;
 }
 
@@ -173,14 +172,13 @@ header {
   padding: 10px 10px;
 }
 
-
 //main-------------------------------
 
 main {
-  width:100%;
+  width: 100%;
   @include locate-in-flexbox(center, stretch);
-  //
-  
+  flex-direction: column;
+  background-color: white;
 }
 
 .mainOne {
@@ -195,7 +193,7 @@ main {
       font-size: $mainPartDivTextFontsize;
       @include content-center();
       * {
-        margin:0px;
+        margin: 0px;
         padding: 0px;
       }
     }
@@ -205,7 +203,7 @@ main {
       background-color: $lightYellowColor;
     }
     div:nth-of-type(3) {
-      width:180px;
+      width: 180px;
       height: 91px;
       background-color: $lightYellowColor;
     }
@@ -213,7 +211,7 @@ main {
       @include locate-in-flexbox(center, stretch);
       flex-direction: column;
       flex-grow: 2;
-      *{
+      * {
         text-align: left;
         @include locate-in-flexbox(flex-start, stretch);
       }
@@ -225,11 +223,110 @@ main {
           font-weight: bold;
         }
       }
-      p{
+      p {
         font-size: $mainPartSmallerTextFontsize;
       }
-
     }
+  }
+}
+
+.secondMainNavigationButtons {
+  @include locate-in-flexbox(flex-end, flex-start);
+  a {
+    @include content-center();
+  }
+}
+
+.mainTwo {
+  margin: 50px 0px;
+  @include locate-in-flexbox(center, stretch);
+  > div {
+    width: $lg-contentWidth;
+    @include locate-in-flexbox(space-between, flex-start);
+  }
+}
+
+.mainTwoListOfCells {
+  @include locate-in-flexbox(space-between, flex-start);
+  width: 75%;
+}
+
+.navigationOfList {
+  height: 200px;
+  width: 220px;
+  @include locate-in-flexbox(center, stretch);
+  flex-direction: column;
+  text-align: left;
+  div:first-of-type {
+    border-bottom: $borderOfInfo;
+    padding: 5px;
+    font-size: $infoCellFontSize;
+    @include locate-in-flexbox(center, stretch);
+    flex-grow: 1;
+    span {
+      font-weight: bold;
+    }
+  }
+
+  div:nth-of-type(2) {
+    @include locate-in-flexbox(flex-end, stretch);
+    flex-direction: row;
+    a {
+      background-color: $lightGreyColor;
+      height: 40px;
+      width: 40px;
+      margin-top: -5px;
+
+      color: white;
+      &:hover {
+        background-color: $lightYellowColor;
+      }
+    }
+  }
+}
+
+.mainTwoListCell {
+  @include locate-in-flexbox(center, stretch);
+  flex-direction: column;
+  width: 30%;
+  height: 300px;
+  margin-bottom: 10px;
+  * {
+    margin: 0px;
+    padding: 0px;
+  }
+  div {
+    flex-grow: 1;
+
+    background-position: center;
+    background-size: 100% 100%;
+    display: flex;
+    div {
+      flex-grow: 1;
+      &:hover {
+        background-color: yellow;
+      }
+      opacity: 0.5;
+    }
+  }
+
+  h2 {
+    font-size: $mainTwoCellHeaderFontsize;
+    font-weight: normal;
+    align-self: flex-start;
+    padding-bottom:10px;
+    border-bottom: $darderBorderOfInfo;
+    span {
+      font-weight: bold;
+    }
+    //margin-bottom: -5px;
+    z-index: 2;
+  }
+  p {
+    margin-top:-5px;
+    z-index: 1;
+    border-top: $borderOfInfo;
+    font-size: $thirdDivFontSizeInThirdheaderPartDiv;
   }
 }
 
@@ -242,6 +339,12 @@ main {
 
   .mainOne > div {
     width: $md-contentWidth;
+  }
+
+  .mainTwo {
+    > div {
+      width: $md-contentWidth;
+    }
   }
 }
 
@@ -284,11 +387,29 @@ main {
     width: $sm-contentWidth;
     flex-direction: column;
     div:nth-of-type(3) {
-     align-self: flex-end;
+      align-self: flex-end;
     }
   }
-}
 
+  .mainTwo {
+    div {
+      flex-direction: column;
+      @include locate-in-flexbox(center, center);
+      width: $sm-contentWidth;
+      div {
+        width: 100%;
+      }
+    }
+  }
+  .mainTwoListOfCells {
+    width: 100%;
+    align-items: center;
+  }
+
+  .mainTwoListCell {
+    width: 100%;
+  }
+}
 
 @media all and (max-width: 435px) {
   header {
@@ -320,6 +441,10 @@ main {
   }
 
   .mainOne > div {
+    width: $xs-contentWidth;
+  }
+
+  .mainTwo > div {
     width: $xs-contentWidth;
   }
 }

@@ -373,6 +373,11 @@ main {
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: white;
 }
 
 .mainOne {
@@ -479,6 +484,205 @@ main {
   font-size: 12px;
 }
 
+.secondMainNavigationButtons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.secondMainNavigationButtons a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mainTwo {
+  margin: 50px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.mainTwo > div {
+  width: 1100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.mainTwoListOfCells {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 75%;
+}
+
+.navigationOfList {
+  height: 200px;
+  width: 220px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: left;
+}
+
+.navigationOfList div:first-of-type {
+  border-bottom: 5px solid #efefef;
+  padding: 5px;
+  font-size: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.navigationOfList div:first-of-type span {
+  font-weight: bold;
+}
+
+.navigationOfList div:nth-of-type(2) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.navigationOfList div:nth-of-type(2) a {
+  background-color: #b8bcc1;
+  height: 40px;
+  width: 40px;
+  margin-top: -5px;
+  color: white;
+}
+
+.navigationOfList div:nth-of-type(2) a:hover {
+  background-color: yellow;
+}
+
+.mainTwoListCell {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 30%;
+  height: 300px;
+  margin-bottom: 10px;
+}
+
+.mainTwoListCell * {
+  margin: 0px;
+  padding: 0px;
+}
+
+.mainTwoListCell div {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  background-position: center;
+  background-size: 100% 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.mainTwoListCell div div {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  opacity: 0.5;
+}
+
+.mainTwoListCell div div:hover {
+  background-color: yellow;
+}
+
+.mainTwoListCell h2 {
+  font-size: 16px;
+  font-weight: normal;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  padding-bottom: 10px;
+  border-bottom: 5px solid #9e9e9e;
+  z-index: 2;
+}
+
+.mainTwoListCell h2 span {
+  font-weight: bold;
+}
+
+.mainTwoListCell p {
+  margin-top: -5px;
+  z-index: 1;
+  border-top: 5px solid #efefef;
+  font-size: 12px;
+}
+
 @media all and (max-width: 1059px) {
   header {
     -webkit-box-sizing: border-box;
@@ -499,6 +703,9 @@ main {
     width: 900px;
   }
   .mainOne > div {
+    width: 900px;
+  }
+  .mainTwo > div {
     width: 900px;
   }
 }
@@ -602,6 +809,34 @@ main {
     -ms-flex-item-align: end;
         align-self: flex-end;
   }
+  .mainTwo div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 420px;
+  }
+  .mainTwo div div {
+    width: 100%;
+  }
+  .mainTwoListOfCells {
+    width: 100%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .mainTwoListCell {
+    width: 100%;
+  }
 }
 
 @media all and (max-width: 435px) {
@@ -621,7 +856,7 @@ main {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    width: 300px;
+    width: 200px;
   }
   .firstHeaderPart nav {
     -webkit-box-orient: vertical;
@@ -648,7 +883,10 @@ main {
     height: 234px;
   }
   .mainOne > div {
-    width: 300px;
+    width: 200px;
+  }
+  .mainTwo > div {
+    width: 200px;
   }
 }
 /*# sourceMappingURL=style.css.map */
