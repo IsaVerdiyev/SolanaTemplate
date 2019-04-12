@@ -1,6 +1,18 @@
 @import "variables";
 @import "mixins";
 
+* {
+  margin: 0px;
+  padding: 0px;
+}
+.punctuationBorder {
+  border-bottom: $punctuationBorder;
+  + * {
+    margin-top: - 5px;
+    z-index: 2;
+  }
+}
+
 body {
   background-color: green;
   font-size: $basicFontSize;
@@ -98,7 +110,7 @@ header {
   height: $lg-xs-md-thirdHeaderCellHeight;
   background-color: $lightYellowColor;
   box-sizing: border-box;
-  font-size: $infoCellFontSize;
+  font-size: $mainPartDivTextFontsize;
   @include locate-in-flexbox(center, stretch);
   flex-direction: column;
   margin-bottom: 10px;
@@ -112,7 +124,7 @@ header {
 }
 
 .firstHeaderCellButtonsDiv {
-  @include locate-in-flexbox(flex-end, stretch);
+  @include locate-in-flexbox(flex-end, flex-end);
   height: 100%;
   font-size: $headerCellItemButtonsFontsize;
   * {
@@ -161,7 +173,7 @@ header {
 
 .readMoreButton {
   background-color: darkgray;
-  padding: 10px 20px;
+  padding: 10px 5px;
   &:hover {
     background-color: $lightYellowColor;
   }
@@ -169,9 +181,9 @@ header {
 
 .arrowButton {
   background-color: $lightYellowColor;
-  padding: 10px 10px;
-  width:50px;
-  height: 50px;
+  padding: 10px;
+  // width: 50px;
+  // height: 50px;
 }
 
 //main-------------------------------
@@ -183,52 +195,61 @@ main {
   background-color: white;
 }
 
-.mainOne {
+.emailForm {
+  background-color: $lightGreyColor;
+  input {
+    ::placeholder {
+      color: white;
+      opacity: 1;
+    } 
+    color: white;
+    background-color: transparent;
+    height: 100%;
+  }
+}
+
+
+
+.yellowLabelHeader {
+  background-color: $lightYellowColor;
+  padding: 20px;
+  font-size: $mainPartDivTextFontsize;
+  @include content-center();
+}
+
+.headingBigBold {
+  font-weight: bold;
+  font-size: $headingFontSize;
+}
+
+.headingBigNormal {
+  font-weight: normal;
+  font-size: $headingFontSize;
+}
+
+.headingSmall {
+  font-size: $thirdDivFontSizeInThirdheaderPartDiv;
+}
+
+.headerText {
+  @include locate-in-flexbox(flex-start, stretch);
+  flex-grow: 1;
+  p{
+    text-align: left;
+    vertical-align: middle;
+    line-height: 35px;
+  }
+}
+
+.mainOne,
+.footerOne {
   width: 100%;
   background-color: $darkenGreyColor;
-  @include content-center();
+  @include locate-in-flexbox(center, stretch);
   > div {
     width: $lg-contentWidth;
     background-color: transparent;
-    @include locate-in-flexbox(center, stretch);
-    div {
-      font-size: $mainPartDivTextFontsize;
-      @include content-center();
-      * {
-        margin: 0px;
-        padding: 0px;
-      }
-    }
-    div:first-of-type {
-      width: 91px;
-      height: 91px;
-      background-color: $lightYellowColor;
-    }
-    div:nth-of-type(3) {
-      width: 180px;
-      height: 91px;
-      background-color: $lightYellowColor;
-    }
-    div:nth-of-type(2) {
-      @include locate-in-flexbox(center, stretch);
-      flex-direction: column;
-      flex-grow: 2;
-      * {
-        text-align: left;
-        @include locate-in-flexbox(flex-start, stretch);
-      }
-      h2 {
-        font-weight: normal;
-        display: inline;
-        span {
-          display: inline;
-          font-weight: bold;
-        }
-      }
-      p {
-        font-size: $mainPartSmallerTextFontsize;
-      }
-    }
+    @include locate-in-flexbox(space-between, stretch);
   }
 }
 
@@ -239,13 +260,19 @@ main {
   }
 }
 
-.mainTwo, .mainFour {
+.mainTwo,
+.mainFour {
   margin: 50px 0px;
   @include locate-in-flexbox(center, stretch);
   > div {
     width: $lg-contentWidth;
     @include locate-in-flexbox(space-between, flex-start);
   }
+}
+
+.alignVertical {
+  flex-direction: column;
+  @include locate-in-flexbox(center, stretch);
 }
 
 .mainTwoListOfCells {
@@ -289,8 +316,8 @@ main {
 
 .lighttopgreyBorder {
   margin-top: -5px;
-    z-index: 1;
-    border-top: $borderOfInfo;
+  z-index: 1;
+  border-top: $borderOfInfo;
 }
 
 .darkGreyBottomBorder {
@@ -304,12 +331,9 @@ main {
   flex-direction: column;
   width: 30%;
   margin-bottom: 10px;
-  * {
-    margin: 0px;
-    padding: 0px;
-  }
+  
 
-  .lighttopgreyBorder{
+  .lighttopgreyBorder {
     margin-top: -5px;
   }
   > div:nth-of-type(1) {
@@ -332,12 +356,11 @@ main {
     font-weight: normal;
     align-self: flex-start;
     padding-bottom: 10px;
-    
+
     span {
       font-weight: bold;
     }
     //margin-bottom: -5px;
-    
   }
   p {
     font-size: $thirdDivFontSizeInThirdheaderPartDiv;
@@ -359,8 +382,8 @@ main {
     width: $lg-contentWidth;
     @include locate-in-flexbox(center, stretch);
     div:nth-of-type(1) {
-      width:50%;
-      img{
+      width: 50%;
+      img {
         width: 100%;
       }
     }
@@ -368,11 +391,11 @@ main {
       width: 20%;
       @include locate-in-flexbox(center, stretch);
       flex-direction: column;
-      *{
+      * {
         margin: 0px;
         font-size: $thirdDivFontSizeInThirdheaderPartDiv;
       }
-      h2{
+      h2 {
         border-bottom: 5px solid white;
         font-size: $mainThreeHeaderFontsize;
       }
@@ -381,8 +404,8 @@ main {
         font-size: $mainThreeHeaderFontsize;
       }
     }
-    div:nth-of-type(3){
-      width:30%;
+    div:nth-of-type(3) {
+      width: 30%;
       li {
         font-size: $thirdDivFontSizeInThirdheaderPartDiv;
       }
@@ -390,6 +413,11 @@ main {
   }
 }
 
+//footer------------------------
+
+footer {
+  width: 100%;
+}
 
 //medias-------------------
 @media all and (max-width: 1059px) {
@@ -398,20 +426,31 @@ main {
     width: $md-contentWidth;
   }
 
-  .mainOne > div {
-    width: $md-contentWidth;
+  .mainOne,
+  .footerOne {
+    > div {
+      width: $md-contentWidth;
+    }
   }
 
-  .mainTwo, .mainFour {
+  .mainTwo,
+  .mainFour {
     > div {
       width: $md-contentWidth;
     }
   }
 
   .mainThree {
-    >div {
+    > div {
       width: $md-contentWidth;
     }
+  }
+
+  .hidden-in-md {
+    // width:0px;
+    // height: 0px;
+    // visibility: hidden;
+    display: none;
   }
 }
 
@@ -421,6 +460,7 @@ main {
     width: $sm-contentWidth;
   }
 
+  
   .firstHeaderPart {
     nav {
       flex-direction: column;
@@ -450,15 +490,16 @@ main {
     height: $sm-thirdHeaderCellHeight;
     width: 100%;
   }
-  .mainOne > div {
-    width: $sm-contentWidth;
-    flex-direction: column;
-    div:nth-of-type(3) {
-      align-self: flex-end;
+  .mainOne,
+  .footerOne {
+    > div {
+      width: $sm-contentWidth;
+     
     }
   }
 
-  .mainTwo, .mainFour {
+  .mainTwo,
+  .mainFour {
     div {
       flex-direction: column;
       @include locate-in-flexbox(center, flex-end);
@@ -478,13 +519,32 @@ main {
   }
 
   .mainThree {
-    >div {
+    > div {
       width: $sm-contentWidth;
       flex-direction: column;
-      div:nth-of-type(1),  div:nth-of-type(2), div:nth-of-type(3){
+      div:nth-of-type(1),
+      div:nth-of-type(2),
+      div:nth-of-type(3) {
         width: 100%;
       }
     }
+  }
+
+  .yellowLabelHeaderLeft {
+    align-self: flex-start;
+  }
+
+  .yellowLabelHeaderRight {
+    align-self: flex-end;
+  }
+
+  .hidden-in-sm {
+    display: none;
+  }
+
+  .alignVerticallyInSm {
+    flex-direction: column;
+    @include locate-in-flexbox(center, stretch);
   }
 }
 
@@ -517,12 +577,18 @@ main {
     height: $sm-thirdHeaderCellHeight;
   }
 
-  .mainOne > div {
-    width: $xs-contentWidth;
+  .mainOne,
+  .footerOne {
+    > div {
+      width: $xs-contentWidth;
+    }
   }
 
-  .mainTwo > div, .mainFour > div {
-    width: $xs-contentWidth;
+  .mainTwo,
+  .mainFour {
+    > div {
+      width: $xs-contentWidth;
+    }
   }
 
   .mainThree > div {
@@ -530,5 +596,13 @@ main {
     i {
       font-size: 12px;
     }
+  }
+
+  .hidden-in-xs {
+    display: none;
+  }
+
+  .emailForm {
+    width: 30px;
   }
 }

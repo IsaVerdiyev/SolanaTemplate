@@ -1,3 +1,17 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.punctuationBorder {
+  border-bottom: 5px dotted #e6e7e6;
+}
+
+.punctuationBorder + * {
+  margin-top: -5px;
+  z-index: 2;
+}
+
 body {
   background-color: green;
   font-size: 30px;
@@ -236,7 +250,7 @@ header .firstHeaderPart nav {
   background-color: yellow;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-size: 24px;
+  font-size: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -256,7 +270,7 @@ header .firstHeaderPart nav {
 .infoDiv {
   margin: 0px;
   margin: 20px 20px 30px 20px;
-  border-bottom: 5px solid #efefef;
+  border-bottom: 5px solid #e6e7e6;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
@@ -269,9 +283,9 @@ header .firstHeaderPart nav {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   height: 100%;
   font-size: 14px;
 }
@@ -350,7 +364,7 @@ header .firstHeaderPart nav {
 
 .readMoreButton {
   background-color: darkgray;
-  padding: 10px 20px;
+  padding: 10px 5px;
 }
 
 .readMoreButton:hover {
@@ -359,9 +373,7 @@ header .firstHeaderPart nav {
 
 .arrowButton {
   background-color: yellow;
-  padding: 10px 10px;
-  width: 50px;
-  height: 50px;
+  padding: 10px;
 }
 
 main {
@@ -382,35 +394,39 @@ main {
   background-color: white;
 }
 
-.mainOne {
-  width: 100%;
-  background-color: #414146;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+.emailForm {
+  background-color: #b8bcc1;
 }
 
-.mainOne > div {
-  width: 1100px;
+.emailForm input {
+  color: white;
   background-color: transparent;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
+  height: 100%;
 }
 
-.mainOne > div div {
+.emailForm input ::-webkit-input-placeholder {
+  color: white;
+  opacity: 1;
+}
+
+.emailForm input :-ms-input-placeholder {
+  color: white;
+  opacity: 1;
+}
+
+.emailForm input ::-ms-input-placeholder {
+  color: white;
+  opacity: 1;
+}
+
+.emailForm input ::placeholder {
+  color: white;
+  opacity: 1;
+}
+
+.yellowLabelHeader {
+  background-color: yellow;
+  padding: 20px;
   font-size: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -423,44 +439,21 @@ main {
           align-items: center;
 }
 
-.mainOne > div div * {
-  margin: 0px;
-  padding: 0px;
+.headingBigBold {
+  font-weight: bold;
+  font-size: 20px;
 }
 
-.mainOne > div div:first-of-type {
-  width: 91px;
-  height: 91px;
-  background-color: yellow;
+.headingBigNormal {
+  font-weight: normal;
+  font-size: 20px;
 }
 
-.mainOne > div div:nth-of-type(3) {
-  width: 180px;
-  height: 91px;
-  background-color: yellow;
+.headingSmall {
+  font-size: 12px;
 }
 
-.mainOne > div div:nth-of-type(2) {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-flex: 2;
-      -ms-flex-positive: 2;
-          flex-grow: 2;
-}
-
-.mainOne > div div:nth-of-type(2) * {
-  text-align: left;
+.headerText {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -470,20 +463,45 @@ main {
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
-.mainOne > div div:nth-of-type(2) h2 {
-  font-weight: normal;
-  display: inline;
+.headerText p {
+  text-align: left;
+  vertical-align: middle;
+  line-height: 35px;
 }
 
-.mainOne > div div:nth-of-type(2) h2 span {
-  display: inline;
-  font-weight: bold;
+.mainOne,
+.footerOne {
+  width: 100%;
+  background-color: #414146;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
 }
 
-.mainOne > div div:nth-of-type(2) p {
-  font-size: 12px;
+.mainOne > div,
+.footerOne > div {
+  width: 1100px;
+  background-color: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
 }
 
 .secondMainNavigationButtons {
@@ -510,7 +528,8 @@ main {
           align-items: center;
 }
 
-.mainTwo, .mainFour {
+.mainTwo,
+.mainFour {
   margin: 50px 0px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -523,7 +542,8 @@ main {
           align-items: stretch;
 }
 
-.mainTwo > div, .mainFour > div {
+.mainTwo > div,
+.mainFour > div {
   width: 1100px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -534,6 +554,22 @@ main {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+}
+
+.alignVertical {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
 }
 
 .mainTwoListOfCells {
@@ -569,7 +605,7 @@ main {
 }
 
 .navigationOfList div:first-of-type {
-  border-bottom: 5px solid #efefef;
+  border-bottom: 5px solid #e6e7e6;
   padding: 5px;
   font-size: 24px;
   display: -webkit-box;
@@ -621,7 +657,7 @@ main {
 .lighttopgreyBorder {
   margin-top: -5px;
   z-index: 1;
-  border-top: 5px solid #efefef;
+  border-top: 5px solid #e6e7e6;
 }
 
 .darkGreyBottomBorder {
@@ -647,11 +683,6 @@ main {
           flex-direction: column;
   width: 30%;
   margin-bottom: 10px;
-}
-
-.mainTwoListCell * {
-  margin: 0px;
-  padding: 0px;
 }
 
 .mainTwoListCell .lighttopgreyBorder {
@@ -709,7 +740,7 @@ main {
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
-  background-color: #efefef;
+  background-color: #e6e7e6;
   color: black;
 }
 
@@ -773,6 +804,10 @@ main {
   font-size: 12px;
 }
 
+footer {
+  width: 100%;
+}
+
 @media all and (max-width: 1059px) {
   header {
     -webkit-box-sizing: border-box;
@@ -792,14 +827,19 @@ main {
             flex-direction: column;
     width: 900px;
   }
-  .mainOne > div {
+  .mainOne > div,
+  .footerOne > div {
     width: 900px;
   }
-  .mainTwo > div, .mainFour > div {
+  .mainTwo > div,
+  .mainFour > div {
     width: 900px;
   }
   .mainThree > div {
     width: 900px;
+  }
+  .hidden-in-md {
+    display: none;
   }
 }
 
@@ -891,18 +931,12 @@ main {
     height: 234px;
     width: 100%;
   }
-  .mainOne > div {
+  .mainOne > div,
+  .footerOne > div {
     width: 420px;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
   }
-  .mainOne > div div:nth-of-type(3) {
-    -ms-flex-item-align: end;
-        align-self: flex-end;
-  }
-  .mainTwo div, .mainFour div {
+  .mainTwo div,
+  .mainFour div {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -918,7 +952,8 @@ main {
             align-items: flex-end;
     width: 420px;
   }
-  .mainTwo div div, .mainFour div div {
+  .mainTwo div div,
+  .mainFour div div {
     width: 100%;
   }
   .mainTwoListOfCells {
@@ -937,8 +972,36 @@ main {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .mainThree > div div:nth-of-type(1), .mainThree > div div:nth-of-type(2), .mainThree > div div:nth-of-type(3) {
+  .mainThree > div div:nth-of-type(1),
+  .mainThree > div div:nth-of-type(2),
+  .mainThree > div div:nth-of-type(3) {
     width: 100%;
+  }
+  .yellowLabelHeaderLeft {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+  }
+  .yellowLabelHeaderRight {
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+  }
+  .hidden-in-sm {
+    display: none;
+  }
+  .alignVerticallyInSm {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
   }
 }
 
@@ -985,10 +1048,12 @@ main {
   .thirdHeaderPartCell {
     height: 234px;
   }
-  .mainOne > div {
+  .mainOne > div,
+  .footerOne > div {
     width: 200px;
   }
-  .mainTwo > div, .mainFour > div {
+  .mainTwo > div,
+  .mainFour > div {
     width: 200px;
   }
   .mainThree > div {
@@ -996,6 +1061,12 @@ main {
   }
   .mainThree > div i {
     font-size: 12px;
+  }
+  .hidden-in-xs {
+    display: none;
+  }
+  .emailForm {
+    width: 30px;
   }
 }
 /*# sourceMappingURL=style.css.map */
