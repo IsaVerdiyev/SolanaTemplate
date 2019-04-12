@@ -170,6 +170,8 @@ header {
 .arrowButton {
   background-color: $lightYellowColor;
   padding: 10px 10px;
+  width:50px;
+  height: 50px;
 }
 
 //main-------------------------------
@@ -237,7 +239,7 @@ main {
   }
 }
 
-.mainTwo {
+.mainTwo, .mainFour {
   margin: 50px 0px;
   @include locate-in-flexbox(center, stretch);
   > div {
@@ -285,18 +287,33 @@ main {
   }
 }
 
+.lighttopgreyBorder {
+  margin-top: -5px;
+    z-index: 1;
+    border-top: $borderOfInfo;
+}
+
+.darkGreyBottomBorder {
+  border-bottom: $darderBorderOfInfo;
+  z-index: 2;
+  align-self: flex-start;
+}
+
 .mainTwoListCell {
   @include locate-in-flexbox(center, stretch);
   flex-direction: column;
   width: 30%;
-  height: 300px;
   margin-bottom: 10px;
   * {
     margin: 0px;
     padding: 0px;
   }
-  div {
-    flex-grow: 1;
+
+  .lighttopgreyBorder{
+    margin-top: -5px;
+  }
+  > div:nth-of-type(1) {
+    height: 200px;
 
     background-position: center;
     background-size: 100% 100%;
@@ -315,18 +332,22 @@ main {
     font-weight: normal;
     align-self: flex-start;
     padding-bottom: 10px;
-    border-bottom: $darderBorderOfInfo;
+    
     span {
       font-weight: bold;
     }
     //margin-bottom: -5px;
-    z-index: 2;
+    
   }
   p {
-    margin-top: -5px;
-    z-index: 1;
-    border-top: $borderOfInfo;
     font-size: $thirdDivFontSizeInThirdheaderPartDiv;
+  }
+}
+
+.arrowHover {
+  &:hover {
+    background-color: $darkenGreyColor;
+    color: white;
   }
 }
 
@@ -368,6 +389,8 @@ main {
     }
   }
 }
+
+
 //medias-------------------
 @media all and (max-width: 1059px) {
   header {
@@ -379,7 +402,7 @@ main {
     width: $md-contentWidth;
   }
 
-  .mainTwo {
+  .mainTwo, .mainFour {
     > div {
       width: $md-contentWidth;
     }
@@ -435,10 +458,10 @@ main {
     }
   }
 
-  .mainTwo {
+  .mainTwo, .mainFour {
     div {
       flex-direction: column;
-      @include locate-in-flexbox(center, center);
+      @include locate-in-flexbox(center, flex-end);
       width: $sm-contentWidth;
       div {
         width: 100%;
@@ -498,7 +521,7 @@ main {
     width: $xs-contentWidth;
   }
 
-  .mainTwo > div {
+  .mainTwo > div, .mainFour > div {
     width: $xs-contentWidth;
   }
 
