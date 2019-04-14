@@ -421,7 +421,7 @@ footer {
   @include content-center();
   > div {
     width: $lg-contentWidth;
-    @include locate-in-flexbox(flex-start, stretch);
+    @include locate-in-flexbox(space-evenly, stretch);
     >div {
       flex-basis: 400px;
       background-color: red;
@@ -431,8 +431,6 @@ footer {
         width: 100%;
         height: 100%;
       }
-      margin-right: 50px;
-      z-index: 0;
     }
   }
 }
