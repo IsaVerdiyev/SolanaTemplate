@@ -13,7 +13,6 @@
 }
 
 body {
-  background-color: green;
   font-size: 30px;
   margin: 0px;
   padding: 0px;
@@ -391,7 +390,6 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: white;
 }
 
 .emailForm {
@@ -449,6 +447,10 @@ main {
   font-size: 20px;
 }
 
+.boldSpan {
+  font-weight: bold;
+}
+
 .headingSmall {
   font-size: 12px;
 }
@@ -477,7 +479,7 @@ main {
 .mainOne,
 .footerOne {
   width: 100%;
-  background-color: #414146;
+  background-color: #565a60;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -570,6 +572,65 @@ main {
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
+}
+
+.alignWrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.footerThreeContactItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.footerThreeContactItem > div {
+  padding: 10px;
+}
+
+.footerThreeContactItem div:nth-of-type(1) {
+  background-color: #565a60;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.socialSiteCell {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: yellow;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
 }
 
 .mainTwoListOfCells {
@@ -847,6 +908,68 @@ footer {
   height: 100%;
 }
 
+.footerThree {
+  width: 100%;
+  background-color: #414146;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footerThree > div {
+  width: 1100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.footerThreeFirstDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.firstDivInFooterThreeFirstDiv {
+  background-color: #565a60;
+  width: 20%;
+  padding: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.secondDivInFooterThreeFirstDiv {
+  padding: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 80%;
+}
+
+.otherDivInFooterThreeFirstDiv {
+  width: 33%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 @media all and (max-width: 1059px) {
   header {
     -webkit-box-sizing: border-box;
@@ -881,6 +1004,9 @@ footer {
     display: none;
   }
   .footerTwo > div {
+    width: 900px;
+  }
+  .footerThree > div {
     width: 900px;
   }
 }
@@ -1048,6 +1174,18 @@ footer {
   .footerTwo > div {
     width: 420px;
   }
+  .footerThreeFirstDiv {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .footerThreeFirstDiv > div {
+    width: 100%;
+  }
+  .footerThree > div {
+    width: 420px;
+  }
 }
 
 @media all and (max-width: 435px) {
@@ -1114,6 +1252,9 @@ footer {
     width: 30px;
   }
   .footerTwo > div {
+    width: 200px;
+  }
+  .footerThree > div {
     width: 200px;
   }
 }

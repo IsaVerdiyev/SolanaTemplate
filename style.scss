@@ -14,7 +14,6 @@
 }
 
 body {
-  background-color: green;
   font-size: $basicFontSize;
   margin: 0px;
   padding: 0px;
@@ -192,7 +191,6 @@ main {
   width: 100%;
   @include locate-in-flexbox(center, stretch);
   flex-direction: column;
-  background-color: white;
 }
 
 .emailForm {
@@ -225,6 +223,10 @@ main {
   font-size: $headingFontSize;
 }
 
+.boldSpan {
+  font-weight: bold;
+}
+
 .headingSmall {
   font-size: $thirdDivFontSizeInThirdheaderPartDiv;
 }
@@ -242,7 +244,7 @@ main {
 .mainOne,
 .footerOne {
   width: 100%;
-  background-color: $darkenGreyColor;
+  background-color: $normalGreyColor;
   @include locate-in-flexbox(center, stretch);
   > div {
     width: $lg-contentWidth;
@@ -271,6 +273,31 @@ main {
 .alignVertical {
   flex-direction: column;
   @include locate-in-flexbox(center, stretch);
+}
+
+.alignWrap {
+  @include locate-in-flexbox(flex-start, stretch);
+  flex-wrap: wrap;
+}
+
+.footerThreeContactItem {
+  @include locate-in-flexbox(flex-start, stretch);
+  > div  {
+    padding: 10px;
+  }
+
+  div:nth-of-type(1) {
+    background-color: $normalGreyColor;
+    @include content-center();
+  }
+}
+
+.socialSiteCell {
+  @include content-center();
+  background-color: $lightYellowColor;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
 }
 
 .mainTwoListOfCells {
@@ -435,6 +462,42 @@ footer {
   }
 }
 
+
+.footerThree{
+  width: 100%;
+  background-color: $darkenGreyColor;
+  @include content-center();
+   > div {
+     width: $lg-contentWidth;
+     @include locate-in-flexbox(center, stretch);
+   }
+}
+
+.footerThreeFirstDiv {
+  @include locate-in-flexbox(center, stretch);
+  flex-wrap: wrap;
+  
+}
+
+.firstDivInFooterThreeFirstDiv {
+  background-color: $normalGreyColor;
+  width: 20%;
+  padding: 20px;
+    box-sizing: border-box;
+}
+
+.secondDivInFooterThreeFirstDiv {
+  padding: 20px;
+  box-sizing: border-box;
+  width: 80%;
+}
+
+.otherDivInFooterThreeFirstDiv {
+  width:33%;
+    box-sizing: border-box;
+}
+
+
 //medias-------------------
 @media all and (max-width: 1059px) {
   header {
@@ -470,6 +533,12 @@ footer {
   }
 
   .footerTwo {
+    >div {
+      width: $md-contentWidth;
+    }
+  }
+
+  .footerThree {
     >div {
       width: $md-contentWidth;
     }
@@ -572,6 +641,21 @@ footer {
       width: $sm-contentWidth;
     }
   }
+
+  .footerThreeFirstDiv {
+    flex-direction: column;
+    > div {
+      width: 100%;
+    }
+  }
+
+  .footerThree {
+    >div {
+      width: $sm-contentWidth;
+    }
+  }
+  
+  
 }
 
 @media all and (max-width: 435px) {
@@ -633,6 +717,12 @@ footer {
   }
 
   .footerTwo {
+    >div {
+      width: $xs-contentWidth;
+    }
+  }
+
+  .footerThree {
     >div {
       width: $xs-contentWidth;
     }
