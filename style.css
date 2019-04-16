@@ -615,6 +615,7 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 70px;
 }
 
 .socialSiteCell {
@@ -958,16 +959,34 @@ footer {
 }
 
 .secondDivInFooterThreeFirstDiv {
-  padding: 20px;
+  padding: 40px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 80%;
+  background-color: white;
 }
 
 .otherDivInFooterThreeFirstDiv {
   width: 33%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+.footerThreeHeading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.footerThreeHeading p {
+  padding: 10px;
+  background-color: white;
 }
 
 @media all and (max-width: 1059px) {
