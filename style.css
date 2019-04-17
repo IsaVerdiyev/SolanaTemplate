@@ -334,6 +334,7 @@ header .firstHeaderPart nav {
 
 .notFirstThirdHeaderPartCells:hover {
   background-color: white;
+  cursor: pointer;
 }
 
 .notFirstThirdHeaderPartCells div {
@@ -368,6 +369,7 @@ header .firstHeaderPart nav {
 
 .readMoreButton:hover {
   background-color: yellow;
+  cursor: pointer;
 }
 
 .arrowButton {
@@ -598,6 +600,7 @@ main {
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
+  font-size: 12px;
 }
 
 .footerThreeContactItem > div {
@@ -632,6 +635,12 @@ main {
   width: 40px;
   height: 40px;
   padding: 10px;
+}
+
+.socialSiteCell:hover {
+  color: white;
+  background-color: #333333;
+  cursor: pointer;
 }
 
 .mainTwoListOfCells {
@@ -936,6 +945,59 @@ footer {
           align-items: stretch;
 }
 
+.footerFour {
+  width: 100%;
+  background-color: #333333;
+  color: #b8bcc1;
+  font-size: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footerFour > div {
+  width: 1100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.footerFour > div > div:nth-of-type(2) {
+  font-size: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.yellowSpan {
+  color: yellow;
+}
+
+.whiteColor {
+  color: white;
+}
+
 .footerThreeFirstDiv {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -952,6 +1014,15 @@ footer {
 
 .firstDivInFooterThreeFirstDiv {
   background-color: #565a60;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 20%;
   padding: 20px;
   -webkit-box-sizing: border-box;
@@ -972,6 +1043,14 @@ footer {
           box-sizing: border-box;
 }
 
+.otherDivInFooterThreeFirstDiv > div:nth-of-type(1) {
+  font-size: 24px;
+}
+
+.otherDivInFooterThreeFirstDiv > div:nth-of-type(2) {
+  font-size: 12px;
+}
+
 .footerThreeHeading {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -987,6 +1066,33 @@ footer {
 .footerThreeHeading p {
   padding: 10px;
   background-color: white;
+  font-size: 16px;
+}
+
+.footerNavigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.footerNavigation > div {
+  padding: 10px;
+}
+
+.footerNavigation > div::nth-of-type(1) {
+  padding-left: 0px;
+}
+
+.yellowLabelHeaderRight:hover {
+  cursor: pointer;
+  background-color: #333333;
+  color: white;
 }
 
 @media all and (max-width: 1059px) {
@@ -1026,6 +1132,9 @@ footer {
     width: 900px;
   }
   .footerThree > div {
+    width: 900px;
+  }
+  .footerFour > div {
     width: 900px;
   }
 }
@@ -1198,12 +1307,38 @@ footer {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    width: 100%;
   }
   .footerThreeFirstDiv > div {
     width: 100%;
   }
   .footerThree > div {
     width: 420px;
+  }
+  .footerFour > div {
+    width: 420px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .footerNavigation {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .footerNavigation > div {
+    padding-left: 0px;
   }
 }
 
@@ -1274,6 +1409,9 @@ footer {
     width: 200px;
   }
   .footerThree > div {
+    width: 200px;
+  }
+  .footerFour > div {
     width: 200px;
   }
 }
